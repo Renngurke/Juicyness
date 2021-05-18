@@ -742,7 +742,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557650078}
-  m_LocalRotation: {x: 0.18924631, y: -0.000000018889692, z: 0.0000000036405916, w: 0.98192966}
+  m_LocalRotation: {x: 0.18924631, y: 0.000000018889692, z: -0.0000000036405916, w: 0.98192966}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1251,7 +1251,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19210339, y: -0.00000003194314, z: 0.0000000062528476, w: 0.9813747}
+  m_LocalRotation: {x: 0.19210339, y: 0.000000026539654, z: -0.0000000051951186, w: 0.9813747}
   m_LocalPosition: {x: 0, y: 7.590829, z: -14.871591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1480,6 +1480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 803d64df3d526f7438f1d68488a9fa52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  juicyness: 0
+  boostAudio: {fileID: 8300000, guid: dfa6a4d6affa0e9409a8c9563fcbd0f4, type: 3}
+  jumpAudio: {fileID: 8300000, guid: 816527ab3a7a60349873adcfd36c147f, type: 3}
   controller: {fileID: 1321402767}
   cam: {fileID: 963194228}
   initialMoveSpeed: 6
