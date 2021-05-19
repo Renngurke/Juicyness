@@ -29,6 +29,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    public ParticleSystem Speed_effect;
+    public ParticleSystem Jump_effect;
+
 
     private void Start()
     {
@@ -88,13 +91,17 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             case "SpeedBoost":
                 movespeed = 25f;
+                Speed_effect.Play();
                 break;
             case "JumpBoost":
                 jumpHeight = 9f;
+                Jump_effect.Play();
                 break;
             case "Ground":
                 movespeed = Mathf.SmoothStep(movespeed, initialMoveSpeed, Time.deltaTime*20);
                 jumpHeight = initialJumpHeight;
+                Speed_effect.Stop();
+                Jump_effect.Stop();
                 break;
         }
     }
