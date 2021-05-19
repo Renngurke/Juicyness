@@ -57,7 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ThirdPersonMovement.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\RunningParticleBehavior.cs" />
+=======
+    <Compile Include="Assets\playercombat.cs" />
+>>>>>>> bb17c7f193e28e02604bbe75303a47a28a3d0929
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -626,6 +630,9 @@
     </Reference>
     <Reference Include="System.Xml.Serialization">
       <HintPath>D:\Unity\2020.3.3f1\Editor\Data\NetStandard\compat\2.0.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
       <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
