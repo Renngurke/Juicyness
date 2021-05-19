@@ -32,11 +32,15 @@ public class ThirdPersonMovement : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    [SerializeField] private ParticleSystem landing_particle;
+    private bool isdoublejump = false;
+
 
     private void Start()
     {
         movespeed = initialMoveSpeed;
     }
+
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -75,9 +79,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
                     goto case Juicyness.Funktional;
                 case Juicyness.Funktional:
-                default:
+                default:    //Jump up
                     velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                     jmpcount = jmpcount - 1;
+                    if(jmpcount == 0) {
+                        isdoublejump = true;
+                    }
                     break;
             }
         }
@@ -131,6 +138,10 @@ public class ThirdPersonMovement : MonoBehaviour
             case "Ground":
                 movespeed = Mathf.SmoothStep(movespeed, initialMoveSpeed, Time.deltaTime * 20);
                 jumpHeight = initialJumpHeight;
+                if (isdoublejump) {
+                    landing_particle.Play();
+                    isdoublejump = false;
+                }
                 break;
         }
     }
