@@ -1,0 +1,206 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.3f1 (76626098c1c4) revision 7758432'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19042.985; Version 2009; 64bit' Language: 'de' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Unity\2020.3.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/experimental-game-design/Juicyness
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+60386
+Successfully changed project path to: D:/experimental-game-design/Juicyness
+D:/experimental-game-design/Juicyness
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 79.04 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.3f1 (76626098c1c4)
+[Subsystems] Discovering subsystems at path D:/Unity/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/experimental-game-design/Juicyness/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 6GB (ID=0x1b83)
+    Vendor:   
+    VRAM:     6052 MB
+    Driver:   27.21.14.6109
+Initialize mono
+Mono path[0] = 'D:/Unity/2020.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Unity/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56644
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.3.3f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Unity/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003703 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 25.09 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.112 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.000801 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 26.4 MB.
+System memory in use after: 26.4 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 1.534600 ms (FindLiveObjects: 0.045100 ms CreateObjectMapping: 0.003600 ms MarkObjects: 1.435600 ms  DeleteObjects: 0.049000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Playground.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Playground.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8f2876b26b175ec2afce14bd0f5cf3e') in 0.017044 seconds
+  Import took 0.018247 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000966 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.742 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 26.2 MB.
+System memory in use after: 26.2 MB.
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 1.274400 ms (FindLiveObjects: 0.046000 ms CreateObjectMapping: 0.004200 ms MarkObjects: 1.218600 ms  DeleteObjects: 0.004600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 196.071217 seconds.
+  path: Assets/Scripts/RunningParticleBehavior.cs
+  artifactKey: Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RunningParticleBehavior.cs using Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4379ccea1e0c34a7acd235cf14b8504') in 0.049880 seconds
+  Import took 0.050844 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001162 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.028 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.03 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 26.2 MB.
+System memory in use after: 26.2 MB.
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 2.099700 ms (FindLiveObjects: 0.075700 ms CreateObjectMapping: 0.005100 ms MarkObjects: 2.011600 ms  DeleteObjects: 0.005300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 123.980316 seconds.
+  path: Assets/Scripts/RunningParticleBehavior.cs
+  artifactKey: Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RunningParticleBehavior.cs using Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5339687ea36520e0289f1b64e9f90b04') in 0.004214 seconds
+  Import took 0.005170 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000862 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.738 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 26.2 MB.
+System memory in use after: 26.2 MB.
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 1.420600 ms (FindLiveObjects: 0.045200 ms CreateObjectMapping: 0.003500 ms MarkObjects: 1.366200 ms  DeleteObjects: 0.004400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 133.167334 seconds.
+  path: Assets/Scripts/RunningParticleBehavior.cs
+  artifactKey: Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/RunningParticleBehavior.cs using Guid(88cddc48ecc308a4eac2c0b1395cf26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e09e81d7c19f633a6c01c21af5e4d619') in 0.003651 seconds
+  Import took 0.004297 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000751 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.734 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.33 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 26.2 MB.
+System memory in use after: 26.2 MB.
+
+Unloading 0 unused Assets to reduce memory usage. Loaded Objects now: 449.
+Total: 1.753900 ms (FindLiveObjects: 0.104700 ms CreateObjectMapping: 0.008000 ms MarkObjects: 1.633800 ms  DeleteObjects: 0.005800 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
