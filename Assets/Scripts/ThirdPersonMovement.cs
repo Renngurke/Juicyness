@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Juicyness { Funktional, Feedback, Juicy }
 
 public class ThirdPersonMovement : MonoBehaviour
 {
-
+    [SerializeField] private Juicyness juicyness;
+    public AudioClip boostAudio;
+    public AudioClip jumpAudio;
     public CharacterController controller;
     public Transform cam;
     public float initialMoveSpeed = 6f;
@@ -21,22 +24,23 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
-    
-    public int jmpcount=2;
+
+    public int jmpcount = 2;
     Vector3 velocity;
     bool isGrounded;
 
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
-    public ParticleSystem Speed_effect;
-    public ParticleSystem Jump_effect;
+    [SerializeField] private ParticleSystem landing_particle;
+    private bool isdoublejump = false;
 
 
     private void Start()
     {
         movespeed = initialMoveSpeed;
     }
+
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -54,7 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
 
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z)*Mathf.Rad2Deg + cam.eulerAngles.y;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
@@ -62,11 +66,27 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDirection.normalized * movespeed * Time.deltaTime);
         }
 
-        if(Input.GetButtonDown("Jump")&& jmpcount!=0) //&& isGrounded )
+        if (Input.GetButtonDown("Jump") && jmpcount != 0) //&& isGrounded )
         {
+            switch (juicyness)
+            {
+                case Juicyness.Juicy:
+                    goto case Juicyness.Feedback;
+                case Juicyness.Feedback:
 
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            jmpcount = jmpcount-1;
+                    AudioSource.PlayClipAtPoint(jumpAudio, transform.position);
+                    //StartCoroutine(delay(boostAudio.length, (result => playedBoostSound = result)));
+
+                    goto case Juicyness.Funktional;
+                case Juicyness.Funktional:
+                default:    //Jump up
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    jmpcount = jmpcount - 1;
+                    if(jmpcount == 0) {
+                        isdoublejump = true;
+                    }
+                    break;
+            }
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -84,27 +104,51 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
     }
+    bool playedBoostSound = false;
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         switch (hit.gameObject.tag)
         {
             case "SpeedBoost":
-                movespeed = 25f;
-                Speed_effect.Play();
+                switch (juicyness)
+                {
+                    case Juicyness.Juicy:
+
+                        goto case Juicyness.Feedback;
+                    case Juicyness.Feedback:
+                        if (!playedBoostSound)
+                        {
+                            playedBoostSound = true;
+                            AudioSource.PlayClipAtPoint(boostAudio, transform.position);
+                            StartCoroutine(delay(boostAudio.length, (result => playedBoostSound = result)));
+                        }
+                        goto case Juicyness.Funktional;
+                    case Juicyness.Funktional:
+                    default:
+                        movespeed = 25f;
+                        break;
+                }
+
+
                 break;
             case "JumpBoost":
                 jumpHeight = 9f;
-                Jump_effect.Play();
                 break;
             case "Ground":
-                movespeed = Mathf.SmoothStep(movespeed, initialMoveSpeed, Time.deltaTime*20);
+                movespeed = Mathf.SmoothStep(movespeed, initialMoveSpeed, Time.deltaTime * 20);
                 jumpHeight = initialJumpHeight;
-                Speed_effect.Stop();
-                Jump_effect.Stop();
+                if (isdoublejump) {
+                    landing_particle.Play();
+                    isdoublejump = false;
+                }
                 break;
         }
     }
 
-   
+    IEnumerator delay(float length, System.Action<bool> testFor)
+    {
+        yield return new WaitForSeconds(length);
+        testFor(false);
+    }
 }
