@@ -18,7 +18,9 @@ public class RunningParticleBehavior : MonoBehaviour
         characterSpeed = characterMovement.movespeed;
         if(characterSpeed < 7f && characterSpeed > 0f)
         {
-            particles.Pause();
+            particles.Stop();
+            //particles.Pause();
+            //particles.Clear();
         }
         else if(characterSpeed > 7f && !particles.isEmitting)
         {
