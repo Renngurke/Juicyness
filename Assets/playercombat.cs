@@ -10,13 +10,20 @@ public class playercombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemylayers;
 
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
+
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Time.time >= nextAttackTime)
         {
-            Debug.Log("m1");
-            Attack();
+            if (Input.GetMouseButton(0))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
     }
 
@@ -26,13 +33,11 @@ public class playercombat : MonoBehaviour
 
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemylayers);
 
-        foreach(Collider enemy in hitEnemies)
+        foreach (Collider enemy in hitEnemies)
         {
-            Debug.Log("hit enemy");
+            enemy.GetComponent<enemy>().TakeDamage();
         }
-   
     }
-
     public void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
@@ -42,4 +47,5 @@ public class playercombat : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
 }
